@@ -5,8 +5,11 @@
 <br />
 A simple todo app built with django
 </p>
+<br />
+<br />
 ### Setup
 To get this repository, run the following commands inside your terminal
+<br />
 ```bash
 $ git clone https://github.com/emrekndl/todoAppDjango.git
 ```
