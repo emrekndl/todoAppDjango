@@ -7,6 +7,7 @@ A simple todo app built with django
 </p>
 <br />
 <br />
+
 ## Setup
 
 To get this repository, run the following commands inside your terminal
@@ -29,4 +30,14 @@ $ python manage.py createsuperuser
 
 ```bash
 $ python manage.py runserver
+```
+
+###### Runing with Dockerfile
+
+```bash
+docker build . -t django-app-v1
+```
+
+```bash
+docker run -p 8001:8000 django-app-v1
 ```
