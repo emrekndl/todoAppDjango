@@ -1,27 +1,27 @@
-FROM python:3.9-alpine
-
-RUN apk update \
-  && apk add \
-    build-base \
-    libpq \
-    py3-pip
+FROM python:3.9-slim-buster
 
 WORKDIR /app
 
+ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 ENV PIP_NO_CACHE_DIR off
 ENV PIP_DISABLE_PIP_VERSION_CHECK on
 # ENV PIP_ROOT_USER_ACTION=ignore
 # ENV PIP_DISABLE_ROOT_WARNING on
 
-COPY ./requirements.txt .
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install -r requirements.txt
+
+COPY ./requirements.txt ./
+
+RUN pip install -r ./requirements.txt
 
 COPY . .
 
-EXPOSE 8000
+# EXPOSE 8000
 
-RUN python3 manage.py makemigrations
-RUN python3 manage.py migrate
-CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
+# RUN python manage.py migrate
+# CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

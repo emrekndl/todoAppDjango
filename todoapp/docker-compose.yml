@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+    db:
+        restart: always
+        image: postgres
+        # ports:
+        #    - "5433:5432"
+        volumes:
+            - postgres_data:/var/lib/postgresql/data
+        env_file: .env
+        # environment:
+        #    - POSTGRES_DB=postgres
+        #    - POSTGRES_USER=postgres
+        #    - POSTGRES_PASSWORD=postgres
+    web:
+        restart: always
+        build:
+            context: .
+        command: >
+            sh -c "python manage.py migrate &&
+                   python3 manage.py runserver 0.0.0.0:8000"
+        ports:
+            - "8001:8000"
+        env_file: .env
+        volumes:
+            - .:/app
+        # environment:
+        #    - POSTGRES_NAME=postgres
+        #    - POSTGRES_USER=postgres
+        #    - POSTGRES_PASSWORD=postgres
+        depends_on:
+            - db
+volumes:
+    postgres_data:
