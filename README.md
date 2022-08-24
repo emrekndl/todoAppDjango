@@ -16,9 +16,9 @@ To get this repository, run the following commands inside your terminal.
 $ git clone https://github.com/emrekndl/todoAppDjango.git
 ```
 - *Note:* First you need to rename ".env.sample" file to ".env".
-- And you need to change "DATABASE_URL" value to "db -> 127.0.0.1" in .env file.
 
 - For manuel installations (without docker compose).
+- And you need to change "DATABASE_URL" value to "db -> 127.0.0.1" in .env file.
 ```bash
 $ python manage.py makemigrations
 ```
