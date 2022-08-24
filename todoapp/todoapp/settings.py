@@ -92,16 +92,14 @@ WSGI_APPLICATION = 'todoapp.wsgi.application'
 
 DATABASES = {
     'default': env.db()
-    # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    # 'NAME': os.environ.get('POSTGRES_NAME'),
-    # 'NAME': 'postgres',
-    # 'USER': os.environ.get('POSTGRES_USER'),
-    # 'USER': 'postgres',
-    # 'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
-    #'PASSWORD': 'postgres',
+    # 'default':{
+    # 'ENGINE': 'django.db.backends.postgresql',
+    # 'NAME': env('POSTGRES_DB'),
+    # 'USER': env('POSTGRES_USER'),
+    # 'PASSWORD': env('POSTGRES_PASSWORD'),
     # 'HOST': '127.0.0.1',
-    # 'HOST': 'db',
     # 'PORT': 5432,
+    # }
 }
 
 
