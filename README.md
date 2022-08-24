@@ -17,7 +17,7 @@ git clone https://github.com/emrekndl/todoAppDjango.git
 ```
 - *Note:* First you need to rename ".env.sample" file to ".env".
 
-###### For manuel installations (without docker compose).
+###### Runing without Docker Compose.
 - You need to change "DATABASE_URL" value to "db -> 127.0.0.1" in .env file.
 ```bash
 python manage.py makemigrations
