@@ -13,26 +13,26 @@ A simple todo app built with django - Posgresql Database and Docker Compose
 To get this repository, run the following commands inside your terminal.
 
 ```bash
-$ git clone https://github.com/emrekndl/todoAppDjango.git
+git clone https://github.com/emrekndl/todoAppDjango.git
 ```
 - *Note:* First you need to rename ".env.sample" file to ".env".
 
-- For manuel installations (without docker compose).
-- And you need to change "DATABASE_URL" value to "db -> 127.0.0.1" in .env file.
+###### For manuel installations (without docker compose).
+- You need to change "DATABASE_URL" value to "db -> 127.0.0.1" in .env file.
 ```bash
-$ python manage.py makemigrations
+python manage.py makemigrations
 ```
 
 ```bash
-$ python manage.py migrate
+python manage.py migrate
 ```
 
 ```bash
-$ python manage.py createsuperuser
+python manage.py createsuperuser
 ```
 
 ```bash
-$ python manage.py runserver
+python manage.py runserver
 ```
 
 ###### Runing with Docker Compose
